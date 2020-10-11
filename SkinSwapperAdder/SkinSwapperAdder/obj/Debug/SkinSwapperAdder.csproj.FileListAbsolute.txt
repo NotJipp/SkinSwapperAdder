@@ -1,0 +1,10 @@
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\bin\Debug\SkinSwapperAdder.exe.config
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\bin\Debug\SkinSwapperAdder.exe
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\bin\Debug\SkinSwapperAdder.pdb
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.csprojAssemblyReference.cache
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.Form1.resources
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.Properties.Resources.resources
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.csproj.GenerateResource.cache
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.csproj.CoreCompileInputs.cache
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.exe
+C:\Users\AMD X8\source\repos\SkinSwapperAdder\SkinSwapperAdder\obj\Debug\SkinSwapperAdder.pdb
