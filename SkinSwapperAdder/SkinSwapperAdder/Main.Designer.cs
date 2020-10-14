@@ -40,7 +40,10 @@
             this.checkBoxSkinHasFaceAccessories = new System.Windows.Forms.CheckBox();
             this.richTextBoxOutput = new System.Windows.Forms.RichTextBox();
             this.groupBoxMain = new System.Windows.Forms.GroupBox();
-            this.buttonCreate = new System.Windows.Forms.Button();
+            this.buttonCreateAppend = new System.Windows.Forms.Button();
+            this.textBoxFileName = new System.Windows.Forms.TextBox();
+            this.labelFileName = new System.Windows.Forms.Label();
+            this.checkBoxAppend = new System.Windows.Forms.CheckBox();
             this.groupBoxMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -136,40 +139,72 @@
             // 
             this.richTextBoxOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.richTextBoxOutput.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.richTextBoxOutput.Location = new System.Drawing.Point(3, 121);
+            this.richTextBoxOutput.Location = new System.Drawing.Point(3, 151);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
-            this.richTextBoxOutput.Size = new System.Drawing.Size(629, 149);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(656, 149);
             this.richTextBoxOutput.TabIndex = 10;
             this.richTextBoxOutput.Text = "Output goes here";
             // 
             // groupBoxMain
             // 
-            this.groupBoxMain.Controls.Add(this.buttonCreate);
+            this.groupBoxMain.Controls.Add(this.checkBoxAppend);
+            this.groupBoxMain.Controls.Add(this.textBoxFileName);
+            this.groupBoxMain.Controls.Add(this.labelFileName);
+            this.groupBoxMain.Controls.Add(this.buttonCreateAppend);
             this.groupBoxMain.Controls.Add(this.checkBoxSkinHasFaceAccessories);
             this.groupBoxMain.Controls.Add(this.checkBoxTopMost);
             this.groupBoxMain.Location = new System.Drawing.Point(3, 0);
             this.groupBoxMain.Name = "groupBoxMain";
-            this.groupBoxMain.Size = new System.Drawing.Size(629, 115);
+            this.groupBoxMain.Size = new System.Drawing.Size(656, 145);
             this.groupBoxMain.TabIndex = 11;
             this.groupBoxMain.TabStop = false;
             // 
-            // buttonCreate
+            // buttonCreateAppend
             // 
-            this.buttonCreate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buttonCreate.Location = new System.Drawing.Point(473, 64);
-            this.buttonCreate.Name = "buttonCreate";
-            this.buttonCreate.Size = new System.Drawing.Size(150, 47);
-            this.buttonCreate.TabIndex = 0;
-            this.buttonCreate.Text = "Create";
-            this.buttonCreate.UseVisualStyleBackColor = true;
-            this.buttonCreate.Click += new System.EventHandler(this.buttonCreate_Click);
+            this.buttonCreateAppend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buttonCreateAppend.Location = new System.Drawing.Point(473, 89);
+            this.buttonCreateAppend.Name = "buttonCreateAppend";
+            this.buttonCreateAppend.Size = new System.Drawing.Size(175, 47);
+            this.buttonCreateAppend.TabIndex = 0;
+            this.buttonCreateAppend.Text = "Create / Append";
+            this.buttonCreateAppend.UseVisualStyleBackColor = true;
+            this.buttonCreateAppend.Click += new System.EventHandler(this.buttonCreateAppend_Click);
+            // 
+            // textBoxFileName
+            // 
+            this.textBoxFileName.Enabled = false;
+            this.textBoxFileName.Location = new System.Drawing.Point(66, 116);
+            this.textBoxFileName.Name = "textBoxFileName";
+            this.textBoxFileName.Size = new System.Drawing.Size(401, 20);
+            this.textBoxFileName.TabIndex = 13;
+            // 
+            // labelFileName
+            // 
+            this.labelFileName.AutoSize = true;
+            this.labelFileName.Enabled = false;
+            this.labelFileName.Location = new System.Drawing.Point(3, 119);
+            this.labelFileName.Name = "labelFileName";
+            this.labelFileName.Size = new System.Drawing.Size(57, 13);
+            this.labelFileName.TabIndex = 12;
+            this.labelFileName.Text = "File Name:";
+            // 
+            // checkBoxAppend
+            // 
+            this.checkBoxAppend.AutoSize = true;
+            this.checkBoxAppend.Location = new System.Drawing.Point(473, 59);
+            this.checkBoxAppend.Name = "checkBoxAppend";
+            this.checkBoxAppend.Size = new System.Drawing.Size(181, 17);
+            this.checkBoxAppend.TabIndex = 14;
+            this.checkBoxAppend.Text = "Append to an already existing file";
+            this.checkBoxAppend.UseVisualStyleBackColor = true;
+            this.checkBoxAppend.CheckedChanged += new System.EventHandler(this.checkBoxAppend_CheckedChanged);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(636, 277);
+            this.ClientSize = new System.Drawing.Size(663, 303);
             this.Controls.Add(this.richTextBoxOutput);
             this.Controls.Add(this.textBoxSkinFace);
             this.Controls.Add(this.labelSkinFace);
@@ -206,7 +241,10 @@
         private System.Windows.Forms.CheckBox checkBoxSkinHasFaceAccessories;
         private System.Windows.Forms.RichTextBox richTextBoxOutput;
         private System.Windows.Forms.GroupBox groupBoxMain;
-        private System.Windows.Forms.Button buttonCreate;
+        private System.Windows.Forms.Button buttonCreateAppend;
+        private System.Windows.Forms.TextBox textBoxFileName;
+        private System.Windows.Forms.Label labelFileName;
+        private System.Windows.Forms.CheckBox checkBoxAppend;
     }
 }
 
