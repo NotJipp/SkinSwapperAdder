@@ -40,10 +40,14 @@
             this.checkBoxSkinHasFaceAccessories = new System.Windows.Forms.CheckBox();
             this.richTextBoxOutput = new System.Windows.Forms.RichTextBox();
             this.groupBoxMain = new System.Windows.Forms.GroupBox();
-            this.buttonCreateAppend = new System.Windows.Forms.Button();
+            this.labelCharacterCount = new System.Windows.Forms.Label();
+            this.labelCount = new System.Windows.Forms.Label();
+            this.textBoxCharacters = new System.Windows.Forms.TextBox();
+            this.labelCharacters = new System.Windows.Forms.Label();
+            this.checkBoxAppend = new System.Windows.Forms.CheckBox();
             this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.labelFileName = new System.Windows.Forms.Label();
-            this.checkBoxAppend = new System.Windows.Forms.CheckBox();
+            this.buttonCreateAppend = new System.Windows.Forms.Button();
             this.groupBoxMain.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,15 +143,19 @@
             // 
             this.richTextBoxOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.richTextBoxOutput.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.richTextBoxOutput.Location = new System.Drawing.Point(3, 151);
+            this.richTextBoxOutput.Location = new System.Drawing.Point(1, 177);
             this.richTextBoxOutput.Name = "richTextBoxOutput";
             this.richTextBoxOutput.ReadOnly = true;
-            this.richTextBoxOutput.Size = new System.Drawing.Size(656, 149);
+            this.richTextBoxOutput.Size = new System.Drawing.Size(658, 149);
             this.richTextBoxOutput.TabIndex = 10;
             this.richTextBoxOutput.Text = "Output goes here";
             // 
             // groupBoxMain
             // 
+            this.groupBoxMain.Controls.Add(this.labelCharacterCount);
+            this.groupBoxMain.Controls.Add(this.labelCount);
+            this.groupBoxMain.Controls.Add(this.textBoxCharacters);
+            this.groupBoxMain.Controls.Add(this.labelCharacters);
             this.groupBoxMain.Controls.Add(this.checkBoxAppend);
             this.groupBoxMain.Controls.Add(this.textBoxFileName);
             this.groupBoxMain.Controls.Add(this.labelFileName);
@@ -156,20 +164,58 @@
             this.groupBoxMain.Controls.Add(this.checkBoxTopMost);
             this.groupBoxMain.Location = new System.Drawing.Point(3, 0);
             this.groupBoxMain.Name = "groupBoxMain";
-            this.groupBoxMain.Size = new System.Drawing.Size(656, 145);
+            this.groupBoxMain.Size = new System.Drawing.Size(656, 171);
             this.groupBoxMain.TabIndex = 11;
             this.groupBoxMain.TabStop = false;
             // 
-            // buttonCreateAppend
+            // labelCharacterCount
             // 
-            this.buttonCreateAppend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.buttonCreateAppend.Location = new System.Drawing.Point(473, 89);
-            this.buttonCreateAppend.Name = "buttonCreateAppend";
-            this.buttonCreateAppend.Size = new System.Drawing.Size(175, 47);
-            this.buttonCreateAppend.TabIndex = 0;
-            this.buttonCreateAppend.Text = "Create / Append";
-            this.buttonCreateAppend.UseVisualStyleBackColor = true;
-            this.buttonCreateAppend.Click += new System.EventHandler(this.buttonCreateAppend_Click);
+            this.labelCharacterCount.AutoSize = true;
+            this.labelCharacterCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.labelCharacterCount.Location = new System.Drawing.Point(473, 145);
+            this.labelCharacterCount.Name = "labelCharacterCount";
+            this.labelCharacterCount.Size = new System.Drawing.Size(113, 17);
+            this.labelCharacterCount.TabIndex = 17;
+            this.labelCharacterCount.Text = "Character count:";
+            // 
+            // labelCount
+            // 
+            this.labelCount.AutoSize = true;
+            this.labelCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
+            this.labelCount.ForeColor = System.Drawing.Color.Green;
+            this.labelCount.Location = new System.Drawing.Point(583, 146);
+            this.labelCount.Name = "labelCount";
+            this.labelCount.Size = new System.Drawing.Size(17, 17);
+            this.labelCount.TabIndex = 12;
+            this.labelCount.Text = "0";
+            // 
+            // textBoxCharacters
+            // 
+            this.textBoxCharacters.Location = new System.Drawing.Point(66, 142);
+            this.textBoxCharacters.Name = "textBoxCharacters";
+            this.textBoxCharacters.Size = new System.Drawing.Size(401, 20);
+            this.textBoxCharacters.TabIndex = 16;
+            this.textBoxCharacters.TextChanged += new System.EventHandler(this.textBoxCharacters_TextChanged);
+            // 
+            // labelCharacters
+            // 
+            this.labelCharacters.AutoSize = true;
+            this.labelCharacters.Location = new System.Drawing.Point(3, 145);
+            this.labelCharacters.Name = "labelCharacters";
+            this.labelCharacters.Size = new System.Drawing.Size(61, 13);
+            this.labelCharacters.TabIndex = 15;
+            this.labelCharacters.Text = "Characters:";
+            // 
+            // checkBoxAppend
+            // 
+            this.checkBoxAppend.AutoSize = true;
+            this.checkBoxAppend.Location = new System.Drawing.Point(473, 59);
+            this.checkBoxAppend.Name = "checkBoxAppend";
+            this.checkBoxAppend.Size = new System.Drawing.Size(181, 17);
+            this.checkBoxAppend.TabIndex = 14;
+            this.checkBoxAppend.Text = "Append to an already existing file";
+            this.checkBoxAppend.UseVisualStyleBackColor = true;
+            this.checkBoxAppend.CheckedChanged += new System.EventHandler(this.checkBoxAppend_CheckedChanged);
             // 
             // textBoxFileName
             // 
@@ -189,22 +235,22 @@
             this.labelFileName.TabIndex = 12;
             this.labelFileName.Text = "File Name:";
             // 
-            // checkBoxAppend
+            // buttonCreateAppend
             // 
-            this.checkBoxAppend.AutoSize = true;
-            this.checkBoxAppend.Location = new System.Drawing.Point(473, 59);
-            this.checkBoxAppend.Name = "checkBoxAppend";
-            this.checkBoxAppend.Size = new System.Drawing.Size(181, 17);
-            this.checkBoxAppend.TabIndex = 14;
-            this.checkBoxAppend.Text = "Append to an already existing file";
-            this.checkBoxAppend.UseVisualStyleBackColor = true;
-            this.checkBoxAppend.CheckedChanged += new System.EventHandler(this.checkBoxAppend_CheckedChanged);
+            this.buttonCreateAppend.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.buttonCreateAppend.Location = new System.Drawing.Point(473, 90);
+            this.buttonCreateAppend.Name = "buttonCreateAppend";
+            this.buttonCreateAppend.Size = new System.Drawing.Size(175, 46);
+            this.buttonCreateAppend.TabIndex = 0;
+            this.buttonCreateAppend.Text = "Create / Append";
+            this.buttonCreateAppend.UseVisualStyleBackColor = true;
+            this.buttonCreateAppend.Click += new System.EventHandler(this.buttonCreateAppend_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(663, 303);
+            this.ClientSize = new System.Drawing.Size(663, 331);
             this.Controls.Add(this.richTextBoxOutput);
             this.Controls.Add(this.textBoxSkinFace);
             this.Controls.Add(this.labelSkinFace);
@@ -245,6 +291,10 @@
         private System.Windows.Forms.TextBox textBoxFileName;
         private System.Windows.Forms.Label labelFileName;
         private System.Windows.Forms.CheckBox checkBoxAppend;
+        private System.Windows.Forms.Label labelCount;
+        private System.Windows.Forms.TextBox textBoxCharacters;
+        private System.Windows.Forms.Label labelCharacters;
+        private System.Windows.Forms.Label labelCharacterCount;
     }
 }
 

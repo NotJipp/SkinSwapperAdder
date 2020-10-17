@@ -54,6 +54,23 @@ namespace SkinSwapperAdder
             }
         }
 
+        private void textBoxCharacters_TextChanged(object sender, EventArgs e)
+        {
+            labelCount.Text = textBoxCharacters.Text.Length.ToString();
+            if (textBoxCharacters.Text.Length < 103)
+            {
+                labelCount.ForeColor = Color.Green;
+            }
+            else if (textBoxCharacters.Text.Length == 103)
+            {
+                labelCount.ForeColor = Color.Orange;
+            }
+            else if (textBoxCharacters.Text.Length > 103)
+            {
+                labelCount.ForeColor = Color.Red;
+            }
+        }
+
         private void buttonCreateAppend_Click(object sender, EventArgs e)
         {
             richTextBoxOutput.ForeColor = Color.Black;
